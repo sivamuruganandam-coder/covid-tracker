@@ -4,7 +4,6 @@ import { Line, Bar } from 'react-chartjs-2'
 
 function Charts({ confirmed, death, date, recovered, country }) {
 
-    
     const line = (
         <Line
             data={{
@@ -49,8 +48,7 @@ function Charts({ confirmed, death, date, recovered, country }) {
         return 'loading..';
     }
     return (
-
-        <div className="charts" style={{ color: "black", textAlign: "center" }}>
+        <div className="Charts" style={{ color: "black", textAlign: "center" }}>
             <h1>Graph</h1>
             {(country) ? bar : line}
         </div>

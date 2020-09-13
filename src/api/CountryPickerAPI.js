@@ -10,17 +10,18 @@ function CountryPickerAPI() {
         const data = await response.json();
         setCountries(data.countries);
     }
+
     useEffect(() => {
         fetchCountry();
     }, []);
 
-   const countryName=countries.map(item=>(
-       item.name
-   ))
+    const countryName = countries.map(item => (
+        item.name
+    ))
 
     return (
-        <div>
-            <CountryPicker key={countryName} countrys={countryName}/>
+        <div className="CountryPickerAPI">
+            <CountryPicker key={countryName} countrys={countryName} />
         </div>
     )
 }

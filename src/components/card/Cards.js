@@ -9,7 +9,7 @@ function Cards({ confirmed, recovered, death, lastUpdate }) {
     return 'loading...'
   }
   return (
-    <div>
+    <div className="Card">
       <Container >
         <Row className="d-flex flex-row justify-content-center mr-auto ml-auto" >
           <Col sm="12" md="12" lg="3" >

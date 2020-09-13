@@ -10,20 +10,15 @@ function CardAPI({ name }) {
     const [confirm, setConfirm] = useState({});
     const [recover, setRecover] = useState({});
     const [death, setDeath] = useState({});
-    const [lastUpdate, setLastUpdate] = useState("")
-
-
+    const [lastUpdate, setLastUpdate] = useState("");
 
     useEffect(() => {
         fetchCard();
     }, [names]);
 
     const fetchCard = async () => {
-
         const response = await fetch(`${url}`);
-
         const data = await response.json();
-
         setConfirm(data.confirmed);
         setRecover(data.recovered);
         setDeath(data.deaths);
@@ -31,7 +26,7 @@ function CardAPI({ name }) {
     }
 
     return (
-        <div>
+        <div className="CardAPI">
             <div>
                 <Cards confirmed={confirm.value} recovered={recover.value} death={death.value} lastUpdate={lastUpdate} />
                 <ChartAPI countryName={names} />

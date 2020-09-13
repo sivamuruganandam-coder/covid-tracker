@@ -9,10 +9,7 @@ function App() {
   return (
     <div className="App">
       <div>
-       
-       
-        <CountryPickerAPI/>
-       
+        <CountryPickerAPI />
       </div>
     </div>
   );

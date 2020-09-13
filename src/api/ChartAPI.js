@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Charts from '../components/chart/Charts';
 
 function ChartAPI({ countryName }) {
+
     let names = countryName;
     let url = (names) ? (`https://covid19.mathdro.id/api/countries/${names}`) : ('https://covid19.mathdro.id/api/daily');
-    console.log(url)
+
     var [dailyData, setDailyData] = useState([]);
     var [confirmed, setConfirmed] = useState({});
     var [recovered, setRecovered] = useState({});
@@ -12,7 +13,6 @@ function ChartAPI({ countryName }) {
 
     useEffect(() => {
         fetchChart();
-
     }, [names]);
 
     const fetchChart = async () => {
@@ -27,22 +27,23 @@ function ChartAPI({ countryName }) {
         }
 
     }
+
     if (!names) {
-         confirmed = dailyData.map(value => (
+        confirmed = dailyData.map(value => (
             value.totalConfirmed
         ))
-         death = dailyData.map(value => (
+        death = dailyData.map(value => (
             value.deaths.total
         ))
         var date = dailyData.map(value => (
             value.reportDate
         ))
     }
-    
+
 
     return (
-        <div>
-            <Charts key={date} confirmed={confirmed} death={death} date={date} recovered={recovered}  country={names} />
+        <div className="ChartAPI">
+            <Charts key={date} confirmed={confirmed} death={death} date={date} recovered={recovered} country={names} />
         </div>
     )
 }
